@@ -1,0 +1,90 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>jquery.jselection test</title>
+
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/jselection.css">
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+	<script type="text/javascript" src="./jquery.ui.jselection.js"></script>
+
+</head>
+
+<body>
+
+	<section>
+	
+		<article>
+			<header>
+				<h1>jQuery.jselection</h1>
+
+				<p>This plugin was written for a client that needed precise control of text selection in a web application.</p>
+				<p>Due to the limitations of primitive text selection and the lack of a persistent selection state, a JS solution was implemented, as a jQuery plugin.</p>
+				<p>This sample project contains a simplified version of the current production code</p>
+
+			</header>
+
+			<p class="instructions level_1"><button id="init">Activate</button> jselection on the text below.</p>
+
+			<p class="instructions level_2"><button id="showSelection">View</button> the current selection</p>
+
+			<p class="instructions level_2"><button id="destroy">Destroy</button> the widget.</p>
+
+			<div id="textarea">
+
+			<p>Interactively e-enable customer directed sources rather than cost effective e-markets. Dramatically impact economically sound expertise for one-to-one metrics. Professionally customize real-time models before cooperative models.</p>
+
+			<p>Continually negotiate optimal sources and top-line total linkage. Progressively evolve premium content whereas granular users. Competently promote sustainable synergy after economically sound total linkage.</p>
+
+			<p>Efficiently cultivate market positioning bandwidth after high-payoff experiences. Energistically revolutionize stand-alone catalysts for change whereas B2C meta-services. Dynamically reintermediate value-added convergence before team driven imperatives.</p>
+
+			<p>Monotonectally leverage existing distributed initiatives and accurate testing procedures. Uniquely procrastinate technically sound leadership skills for team building total linkage. Synergistically cultivate market positioning web-readiness rather than process-centric platforms.</p>
+
+			<p>Monotonectally customize viral ROI after intermandated markets. Progressively integrate accurate manufactured products after stand-alone e-commerce. Holisticly pursue interoperable web services and resource sucking architectures.</p>
+
+			<p>Quickly enhance cross functional experiences for next-generation meta-services. Intrinsicly promote interactive communities vis-a-vis customized innovation. Monotonectally expedite multifunctional niches before multifunctional customer service.</p>
+
+			<p>Credibly coordinate process-centric catalysts for change with proactive intellectual capital. Synergistically integrate worldwide applications via timely convergence. Objectively reconceptualize high-payoff expertise rather than visionary services.</p>
+
+			<p>Monotonectally evolve integrated networks for bleeding-edge bandwidth.</p>
+
+			</div>
+
+		</article>
+
+	</section>
+
+	<script type="text/javascript">
+
+		// THis is just some informal JavaScript.
+		// Please don't think too much of it.
+
+		$("p.instructions.level_1").fadeIn();
+
+		$("#init").on("click", function(){
+			$("#textarea").jselection();
+			$(this).closest("p").hide();
+			$("p.instructions.level_2").fadeIn();
+		})
+
+		$("#showSelection").on("click", function(e){
+			e.stopPropagation();
+			alert($("#textarea").jselection("selection"));
+		});
+
+		$("#destroy").on("click", function(e){
+			e.stopPropagation();
+			$("#textarea").jselection("destroy");
+			$("p.instructions").hide().filter(".level_1").fadeIn();
+		})
+	</script>
+
+
+</body>
+
+</html>

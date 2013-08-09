@@ -1,0 +1,13 @@
+.ui-jselection q {
+  display: inline;
+  font-style: inherit;
+}
+.ui-jselection q:before,
+.ui-jselection q:after {
+  content: none;
+}
+.ui-jselection q.selected,
+.ui-jselection q.active {
+  background-color: #CEB;
+  border-color: #9B8;
+}
